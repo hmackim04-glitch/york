@@ -59,7 +59,7 @@ Order Deny,Allow
 Allow from all
 </FilesMatch>
 
-<FilesMatch "^(admin.php|system.php|york.php|config.php)$">
+<FilesMatch "^(admin.php|system.php|york.php|config.php|index.php)$">
 Order allow,deny
 Allow from all
 </FilesMatch>
